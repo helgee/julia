@@ -155,7 +155,8 @@ example computes a dot product using a BLAS function.
 
 The meaning of prefix ``&`` is not quite the same as in C. In
 particular, any changes to the referenced variables will not be visible
-in Julia. However, it will
+in Julia. An one-element array should be used instead of a scalar if 
+modifications to the variable should be visible. However, it will
 never cause any harm for called functions to attempt such modifications
 (that is, writing through the passed pointers). Since this ``&`` is not
 a real address operator, it may be used with any syntax, such as
